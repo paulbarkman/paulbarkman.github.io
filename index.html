@@ -39,12 +39,13 @@
 <body>
 
 Welcome Test
-analytics.track('Test Event');
-analytics.track('Test Event');
-analytics.track('Test Event');
-analytics.track('Test Event');
-analytics.track('Test Event');
-analytics.track('Test Event');
+<button onclick="myFunction()">Track Event</button>
+    <p id="track test event"></p>
+    <script>
+      function myFunction() {
+         window.analytics.track('Test Event');
+      }
+    </script>
 
 
 
