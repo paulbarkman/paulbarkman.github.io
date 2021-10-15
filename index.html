@@ -13,8 +13,24 @@
           'Hotjar': loadFullStory,
         }
       });*/
-    analytics.load("7HOyx5lA09AC4Hn5L9QGhbBLqmJArGXQ");
-    analytics.page();
+    analytics.load("7HOyx5lA09AC4Hn5L9QGhbBLqmJArGXQ", {
+    // https://segment.com/docs/connections/destinations/catalog
+    integrations: {
+      'All': false,
+      'Mixpanel': true,
+      'Facebook Pixel': true,
+      'Segment.io': { // apiHost proxy set in GUI
+        deliveryStrategy: {
+          strategy: 'batching',
+          config: {
+            size: 20,
+            timeout: 5000
+          }
+        }
+      }
+    }
+  });
+    //analytics.page();
     }}();
   </script>
     <script type="text/javascript" async="" src="./index_files/fbevents.js"></script><script type="text/javascript" async="" src="./index_files/analytics.min.js"></script>
